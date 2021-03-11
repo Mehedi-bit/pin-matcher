@@ -99,7 +99,6 @@ color: #E0B612;
 .notify-section{
     width: 35%;
     margin: 0 auto;
-    display: none;
 }
 .action-left {
     color: #FF3C5F;
@@ -108,4 +107,7 @@ color: #E0B612;
 input{
     text-align: center;
     font-size: 23px !important;
+}
+.notify{
+    display: none;
 }

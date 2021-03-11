@@ -21,8 +21,7 @@ for (let i = 0; i < buttons.length; i++) {
         const buttonText = item.innerText;
            
         if (buttonText == 'C') {
-            calcDigits = '';
-            calcInput.value = calcDigits;
+            calcClear();
         }
         else if (buttonText == '<') {
             calcDigits = calcDigits.slice(0,-1);
@@ -36,13 +35,28 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 // submit button handling
-// const submitBtn = document.getElementById('submit-btn');
-// submitBtn.addEventListener('click', function(){
-//     if (calcDigits == pinGenerator()) {
-//         document.getElementsByClassName('notify')[0].style.display = "block";
-//         calcInput.value = '';
-//     }
-// })
+const submitBtn = document.getElementById('submit-btn');
+submitBtn.addEventListener('click', function(){
+    console.log(calcDigits);
 
+    if (calcDigits == pinInput.value) {
+        document.getElementsByClassName('notify')[1].style.display = "block";
+        document.getElementsByClassName('notify')[0].style.display = "none";
+        calcClear();
+        pinClear();
+    }
+    else {
+        document.getElementsByClassName('notify')[0].style.display = "block";
+        document.getElementsByClassName('notify')[1].style.display = "none";
+        calcClear();
+    }
+})
+function calcClear(){
+    calcDigits = '';
+    calcInput.value = calcDigits;
+}
+function pinClear(){
+    pinInput.value = ""
+}
 
     
